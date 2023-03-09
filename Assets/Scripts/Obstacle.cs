@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Obstacle : MonoBehaviour
 {
     public float speed;
@@ -19,8 +19,11 @@ public class Obstacle : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
+    
+
     private void OnBecameInvisible()
     {
+        
         //Destroy obstacle when its off camera
         Destroy(gameObject);
     }

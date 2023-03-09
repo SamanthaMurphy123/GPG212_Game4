@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,8 +27,8 @@ public class PlayerController : MonoBehaviour
         {
             //make player jump
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-
-        }
+            
+        }       
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("End");
         }
     }
 

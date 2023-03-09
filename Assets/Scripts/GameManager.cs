@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
     int score = 0;
 
     public TextMeshProUGUI scoreText;
-    public GameObject playButton;
     public GameObject player;
 
     // Start is called before the first frame update
@@ -29,11 +28,12 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            float waitTime = Random.Range(0.5f, 2);
+            float waitTime = Random.Range(0.65f, 2);
 
             yield return new WaitForSeconds(waitTime);
 
             Instantiate(obstacle, spawnPoint.position, Quaternion.identity);
+            
         }
     }
 
@@ -45,9 +45,6 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        player.SetActive(true);
-        playButton.SetActive(false);
-
         StartCoroutine("SpawnObstacles");
 
         InvokeRepeating("ScoreUp", 2f, 1f);
